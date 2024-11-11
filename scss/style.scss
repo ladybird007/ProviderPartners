@@ -1,0 +1,119 @@
+$dark-navy: #012A53;
+$navy: #004C97;
+$pale-blue: #77ADCE;
+$light-blue: #00AFD7;
+$teal: #00AB8E;
+$green: #A4D65E;
+$gray: #92929D;
+$light-gray: #DEE8F2;
+$white: #ffffff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+///// Typography /////
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+h3 {
+  font-size: 24px;
+}
+p {
+  font-size: 18px;
+  line-height: 1.4;
+}
+p.large {
+  font-size: 24px;
+  line-height: 1.5;
+}
+p.small {
+  font-size: 16px;
+  line-height: 1.4;
+}  
+a {
+  transition: all 0.3s;
+  text-decoration: none;
+  color: $light-blue;
+}
+
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 56px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+}
+
+///// buttons /////
+
+.btn {
+  height: 53px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  border-radius: 40px;
+  border: 2px solid;
+  &--primary {
+    background-color: $navy;
+    border-color: $navy;
+    color: $white;
+    &:hover {
+      background-color: $dark-navy;
+      border-color: $dark-navy;
+    }
+  }
+  &--primary-outline {
+    background-color: $white;
+    border-color: $navy;
+    color: $navy;
+    &:hover {
+      background-color: $navy;
+      color: $white;
+    }
+  }
+  &--secondary {
+    background-color: $green;
+    border-color: $green;
+    color: $dark-navy;
+    &:hover {
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+    }
+  }
+  &--secondary-outline {
+    background-color: $white;
+    border-color: $green;
+    color: $dark-navy;
+    &:hover {
+      background-color: $green;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    }
+  }
+}
