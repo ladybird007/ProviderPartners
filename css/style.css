@@ -1291,6 +1291,9 @@ a {
 }
 
 .accordion {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 .accordion__item {
@@ -1300,6 +1303,7 @@ a {
 }
 .accordion__btn {
   position: relative;
+  padding-right: 50px;
   cursor: pointer;
 }
 .accordion__btn:before, .accordion__btn:after {
@@ -1337,6 +1341,11 @@ a {
   padding-top: 24px;
   padding-left: 30px;
   padding-right: 30px;
+}
+@media (max-width: 1279px) {
+  .accordion h3 br {
+    display: none;
+  }
 }
 
 .check-list {
