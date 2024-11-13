@@ -415,7 +415,7 @@ a {
 .section__headline {
   max-width: 800px;
 }
-.section__headline h3 + p {
+.section__headline *:not(:first-child) {
   margin-top: 32px;
 }
 @media (max-width: 991px) {

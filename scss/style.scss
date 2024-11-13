@@ -411,7 +411,7 @@ a {
   &__headline {
     @extend .text-center;
     max-width: 800px;
-    h3 + p {
+    *:not(:first-child) {
       margin-top: 32px;
     }
   }
