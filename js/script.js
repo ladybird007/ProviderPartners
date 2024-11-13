@@ -10,7 +10,19 @@
       `<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11.2765 0.186768L6.68652 4.51335L2.09652 0.186768L0.686523 1.51875L6.68652 7.18677L12.6865 1.51875L11.2765 0.186768Z" fill="#003D4C"/>
       </svg>`
-    )
+    );
+
+
+    //  Add arrow to pagination button
+    const paginationBtn = $('.pagination__prev, .pagination__next');
+    if (paginationBtn.length > 0) {
+      paginationBtn.append(
+        `<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.2765 0.186768L6.68652 4.51335L2.09652 0.186768L0.686523 1.51875L6.68652 7.18677L12.6865 1.51875L11.2765 0.186768Z" fill="#003D4C"/>
+        </svg>`
+      );
+    }
+
 
     // Show/hide menu in header
 
