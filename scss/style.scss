@@ -120,6 +120,9 @@ a {
 .text-medium {
   font-weight: 500;
 }
+.text-bold {
+  font-weight: 700;
+}
 
 
 @media (max-width: 991px) {
@@ -433,6 +436,14 @@ a {
     content: '';
     position: absolute;
   }
+  &:before {
+    right: 0;
+    top: 0;
+  }
+  &:after {
+    top: 0;
+    bottom: 0;
+  }
   img {
     position: relative;
   }
@@ -440,10 +451,24 @@ a {
     padding: 14px;
     &:before {
       left: 0;
-      right: 0;
-      top: 0;
       bottom: 0;
       background: url(../img/waveImgBg/blue.svg) no-repeat 50% 50% / contain;
+    }
+  }
+  &--teal {
+    padding: 40px 30px 0 0;
+    &:before {
+      left: 20px;
+      bottom: 0;
+      background: url(../img/waveImgBg/teal.svg) no-repeat 50% 0 / contain;
+    }
+  }
+  &--green {
+    padding: 10px 0 0;
+    &:before {
+      left: 10px;
+      bottom: 10px;
+      background: url(../img/waveImgBg/green.svg) no-repeat 50% 50% / contain;
     }
   }
   &--outline-green {
@@ -451,20 +476,52 @@ a {
     &:after {
       left: 0;
       right: 10px;
-      top: 0;
-      bottom: 0;
       background: url(../img/waveImgBg/outline-green.svg) no-repeat 50% 100% / contain;
+    }
+  }
+  &--outline-blue {
+    padding: 0 0 30px;
+    &:after {
+      left: 20px;
+      right: -20px;
+      background: url(../img/waveImgBg/outline-blue.svg) no-repeat 50% 100% / contain;
     }
   }
 }
 
+.stats {
+  display: flex;
+  
+  @media (max-width: 991px) {
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 32px;
+  }
+  @media (min-width: 992px) {
+    margin-top: 100px;
+    gap: 20px;
+  }
+}
 .stat {
-  width: 295px;
-  padding: 60px 25px 44px;
   flex-shrink: 0;
   border-radius: 20px;
   background-position: 100% 0;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  .features & {
+    width: 295px;
+    padding: 60px 25px 44px;
+  }
+  .stats & {
+    flex: 1;
+    padding: 46px 40px;
+    @media (min-width: 992px) {
+      min-height: 440px;
+    }
+  }
   &--green {
     background-color: $green;
     background-image: url(../img/icons/stat-house.svg);
@@ -473,6 +530,16 @@ a {
     background-color: $dark-navy;
     background-image: url(../img/icons/stat-stethoscope.svg);
     color: $green;
+  }
+  &--blue {
+    background-color: $navy;
+    background-image: url(../img/icons/stat-money.svg);
+    color: $white;
+  }
+  &--teal {
+    background-color: $teal;
+    background-image: url(../img/icons/stat-chat.svg);
+    color: $dark-navy;
   }
   &__percent {
     font-size: 120px;
@@ -483,6 +550,12 @@ a {
   p {
     font-weight: 700;
     line-height: 1.17;
+  }
+  .btn {
+    margin-top: 48px;
+  }
+  h2 {
+    margin-bottom: 32px;
   }
 }
 
@@ -497,7 +570,8 @@ a {
 }
 
 .icon-bg {
-  padding: 10px 35px 10px 13px;
+  height: 70px;
+  padding: 10px 30px 10px 8px;
   display: inline-flex;
   background-position: 100% 50%;
   background-repeat: no-repeat;
@@ -975,12 +1049,19 @@ a {
 
 ////// Stak-card /////
 
+.stacks {
+  max-width: 1080px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .stack-card {
   display: flex;
   align-items: center;
   &__text {
-    & > *:not(:last-child) {
-      margin-bottom: 32px;
+    & > *:not(:first-child) {
+      margin-top: 32px;
     }
   }
   &__photo {
