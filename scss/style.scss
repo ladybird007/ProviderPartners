@@ -216,6 +216,38 @@ a {
       }
     }
   }
+  &--cta {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 20;
+    height: 70px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    background-color: $dark-navy;
+    color: $white;
+    border: none;
+    &:before {
+      content: '';
+      width: 24px;
+      height: 20px;
+      background: url(../img/icons/cta-chat.svg) no-repeat 50% 50% / contain;
+    }
+    &:hover {
+      box-shadow: 0px 4px 37px 0px rgba(164, 214, 94, 1), 0px 4px 4px 0px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 1279px) {
+      width: 70px;
+      height: 70px;
+      span {
+        display: none;
+      }
+    }
+    @media (min-width: 1280px) {
+      &:before {
+        margin-right: 8px;
+      }
+    }
+  }
 }
 
 ///// Header /////
