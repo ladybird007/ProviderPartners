@@ -1305,6 +1305,33 @@ a {
   }
 }
 
+@media (min-width: 1280px) {
+  .providers-section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .providers-section:before, .providers-section:after {
+    content: "";
+    position: absolute;
+  }
+  .providers-section:before {
+    width: 350px;
+    height: 340px;
+    top: 782px;
+    left: -203px;
+    background: url(../img/public-reporting/bg-left.svg) no-repeat 50% 50%;
+  }
+  .providers-section:after {
+    width: 460px;
+    height: 500px;
+    top: 50%;
+    right: -150px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background: url(../img/public-reporting/bg-right.svg) no-repeat 50% 50%;
+  }
+}
 .providers-contact {
   margin-bottom: 100px;
   -webkit-box-align: start;
@@ -1324,6 +1351,8 @@ a {
 }
 
 .providers-grid {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

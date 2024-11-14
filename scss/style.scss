@@ -1178,6 +1178,34 @@ a {
 
 ///// Providers /////
 
+@media (min-width: 1280px) {
+  .providers-section{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+    }
+    &:before {
+      width: 350px;
+      height: 340px;
+      top: 782px;
+      left: -203px;
+      background: url(../img/public-reporting/bg-left.svg) no-repeat 50% 50%;
+    }
+    &:after {
+      width: 460px;
+      height: 500px;
+      top: 50%;
+      right: -150px;
+      transform: translateY(-50%);
+      background: url(../img/public-reporting/bg-right.svg) no-repeat 50% 50%;
+    }
+  }
+}
+
 .providers-contact {
   margin-bottom: 100px;
   align-items: flex-start;
@@ -1194,6 +1222,8 @@ a {
   }
 }
 .providers-grid {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
