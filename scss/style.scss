@@ -433,6 +433,9 @@ a {
     padding-top: 0;
     padding-bottom: 0;
   }
+  &--no-padding-bottom {
+    padding-bottom: 0;
+  }
 }
 
 .wave-img {
@@ -1032,6 +1035,10 @@ a {
     width: 142px;
     height: 142px;
     background: url(../img/icons/play.svg) no-repeat 50% 50% / contain;
+    &--small {
+      width: 58px;
+      height: 58px;
+    }
   }
   &__btn {
     position: absolute;
@@ -1270,6 +1277,55 @@ a {
   @media (max-width: 1279px) {
     h3 br {
       display: none;
+    }
+  }
+}
+
+///// Resources /////
+
+.resources {
+  display: flex;
+  &__item {
+    text-align: center;
+    max-width: 350px;
+  }
+  &__media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    height: 207px;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: inherit;
+      object-fit: cover;
+    }
+  }
+  .video-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -29px;
+    margin-left: -29px;
+  }
+  @media (max-width: 991px) {
+    &__item {
+      margin-top: 32px;
+    }
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  @media (min-width: 992px) {
+    &__item {
+      margin-top: 60px;
     }
   }
 }
