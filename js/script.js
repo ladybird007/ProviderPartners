@@ -1,10 +1,13 @@
 (function($){
   $(document).ready(function(){
 
+
     const dropBtn = $('.js-menu-btn'),
           dropSubMenu = dropBtn.parent().find('.js-menu'),
           dropBtnMobile = $('.js-mobile-nav-btn'),
           dropNav = $('.js-nav');
+
+
     // Add arrow svg to dropdown-btn
     dropBtn.append(
       `<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +52,6 @@
         $(this).addClass('opened').closest('.header').find('.js-nav').slideDown();
       }
     });
-
 
     // hide menu on click outside
     $(document).click(function(e){ 
@@ -110,12 +112,23 @@
     const moreBtn = $('.js-more-btn'),
           moreContent = $('.js-more-content');
 
-    moreBtn.on('click', function() {
+    moreBtn.on('click', function(e) {
+      e.preventDefault();
       if ($(this).hasClass('opened')) {
-        $(this).removeClass('opened').text('Read More');
+        $(this).removeClass('opened');
+        if ($(this).hasClass('providers-more-btn')) {
+          $(this).text('Veiw More');
+        } else {
+          $(this).text('Read More');
+        }
         moreContent.slideUp();
       } else {
-        $(this).addClass('opened').text('Read Less');
+        $(this).addClass('opened');
+        if ($(this).hasClass('providers-more-btn')) {
+          $(this).text('Veiw Less');
+        } else {
+          $(this).text('Read Less');
+        }
         moreContent.slideDown();
       }
     });
