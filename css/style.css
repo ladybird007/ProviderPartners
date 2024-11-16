@@ -284,6 +284,12 @@ a {
 .header img {
   display: block;
 }
+.header .active > a, .header .active > span {
+  color: #004C97;
+}
+.header .active > a svg path, .header .active > span svg path {
+  fill: #004C97;
+}
 @media (max-width: 991px) {
   .header--colored {
     background-color: #004C97;
@@ -373,6 +379,9 @@ a {
   }
   .navigation__drop-btn svg {
     right: 15px;
+  }
+  .navigation__sub-menu {
+    display: none;
   }
   .navigation__sub-menu li {
     border-top: 1px solid #DEE8F2;

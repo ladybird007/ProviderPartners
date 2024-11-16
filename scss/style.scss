@@ -273,6 +273,17 @@ a {
   img {
     display: block;
   }
+  .active {
+    & > a,
+    & > span {
+      color: $navy;
+      svg {
+        path {
+          fill: $navy;
+        }
+      }
+    }
+  }
   @media (max-width: 991px) {
     &--colored {
       background-color: $navy;
@@ -361,6 +372,7 @@ a {
       }
     }
     &__sub-menu {
+      display: none;
       li {
         border-top: 1px solid $light-gray;
       }
