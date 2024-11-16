@@ -761,7 +761,32 @@ a {
   background-image: url(../img/home/banner-bg.svg);
   color: #ffffff;
 }
-.banner__bg img {
+.banner__bg:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+}
+.banner--border-blue .banner__bg:before {
+  background-color: #004C97;
+}
+.banner--border-teal .banner__bg:before {
+  background-color: #00AB8E;
+}
+.banner--border-light-blue .banner__bg:before {
+  background-color: #00AFD7;
+}
+.banner--border-green .banner__bg:before {
+  background-color: #A4D65E;
+}
+.banner__bg-img {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.banner__bg-img img {
   width: 100%;
   height: 100%;
   max-width: inherit;
@@ -803,13 +828,32 @@ a {
     font-size: 35px;
   }
   .banner__bg {
-    height: 282px;
+    position: relative;
+    height: 302px;
     margin-left: -15px;
     margin-right: -15px;
+  }
+  .banner__bg:before {
+    left: -60px;
+    right: -60px;
+    bottom: 0;
+    border-bottom-right-radius: 50% 10px;
+    border-bottom-left-radius: 50% 10px;
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
   }
   .banner__headline {
     padding-top: 50px;
     text-align: center;
+  }
+  .banner__bg-img {
+    bottom: 10px;
+    left: -10px;
+    right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom-right-radius: 50% 10px;
+    border-bottom-left-radius: 50% 10px;
   }
   .banner .large {
     line-height: 1.16;
@@ -833,13 +877,24 @@ a {
     width: 265px;
   }
 }
+@media (min-width: 768px) {
+  .banner__bg-img--shadow:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(269.3deg, #FFFFFF -4.37%, rgba(255, 255, 255, 0) 34.78%), linear-gradient(270deg, rgba(255, 255, 255, 0) 51.11%, #FFFFFF 103.16%);
+  }
+}
 @media (min-width: 992px) {
   .banner--blue {
     padding-top: 58px;
     padding-bottom: 126px;
   }
   .banner:not(.banner--blue) {
-    height: 581px;
+    height: 601px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -853,6 +908,24 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
+  }
+  .banner__bg:before {
+    left: -60px;
+    right: -60px;
+    bottom: 11px;
+    border-bottom-right-radius: 50% 60px;
+    border-bottom-left-radius: 50% 60px;
+    -webkit-transform: rotate(-1.5deg);
+            transform: rotate(-1.5deg);
+  }
+  .banner__bg-img {
+    bottom: 20px;
+    left: -80px;
+    right: -80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-bottom-right-radius: 50% 80px;
+    border-bottom-left-radius: 50% 80px;
   }
 }
 

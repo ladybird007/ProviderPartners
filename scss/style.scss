@@ -718,6 +718,31 @@ a {
     color: $white;
   }
   &__bg {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 120px;
+      .banner--border-blue & {
+        background-color: $navy;
+      }
+      .banner--border-teal & {
+        background-color: $teal;
+      }
+      .banner--border-light-blue & {
+        background-color: $light-blue;
+      }
+      .banner--border-green & {
+        background-color: $green;
+      }
+    }
+  }
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
     img {
       width: 100%;
       height: 100%;
@@ -758,13 +783,31 @@ a {
       }
     }
     &__bg {
-      height: 282px;
+      position: relative;
+      height: 302px;
       margin-left: -15px;
       margin-right: -15px;
+      &:before {
+        left: -60px;
+        right: -60px;
+        bottom: 0;
+        border-bottom-right-radius: 50% 10px;
+        border-bottom-left-radius: 50% 10px;
+        transform: rotate(-1deg);
+      }
     }
     &__headline {
       padding-top: 50px;
       text-align: center;
+    }
+    &__bg-img {
+      bottom: 10px;
+      left: -10px;
+      right: -10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-bottom-right-radius: 50% 10px;
+      border-bottom-left-radius: 50% 10px;
     }
     .large {
       line-height: 1.16;
@@ -786,13 +829,29 @@ a {
       width: 265px;
     }
   }
+  @media (min-width: 768px) {
+    &__bg-img {
+      &--shadow {
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: linear-gradient(269.3deg, #FFFFFF -4.37%, rgba(255, 255, 255, 0) 34.78%), linear-gradient(270deg, rgba(255, 255, 255, 0) 51.11%, #FFFFFF 103.16%);
+
+        }
+      }
+    }
+  }
   @media (min-width: 992px) {
     &--blue {
       padding-top: 58px; 
       padding-bottom: 126px;
     }
     &:not(.banner--blue) {
-      height: 581px;
+      height: 601px;
       display: flex;
       align-items: center;
     }
@@ -802,6 +861,23 @@ a {
       bottom: 0;
       left: 0;
       right: 0;
+      &:before {
+        left: -60px;
+        right: -60px;
+        bottom: 11px;
+        border-bottom-right-radius: 50% 60px;
+        border-bottom-left-radius: 50% 60px;
+        transform: rotate(-1.5deg);
+      }
+    }
+    &__bg-img {
+      bottom: 20px;
+      left: -80px;
+      right: -80px;
+      padding-left: 80px;
+      padding-right: 80px;
+      border-bottom-right-radius: 50% 80px;
+      border-bottom-left-radius: 50% 80px;
     }
   }
 }
