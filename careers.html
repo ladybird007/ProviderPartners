@@ -130,7 +130,152 @@
     </div>
   </footer>
 
-  <a href="#" class="btn btn--cta js-modal-btn"><span>Get Started</span></a>
+  <div id="modal-request" class="modal js-modal">
+    <div class="modal__over">
+      <div class="modal__body js-modal-body">
+        <div class="modal__header">
+          <span class="modal__close js-modal-close"></span>
+          <h2>Request a Demo</h2>
+          <p>
+            Get started by filling out the form to request 
+            a demo or contact us for general information.
+          </p>
+        </div>
+        <div class="modal__content">
+          <div class="custom-form js-form">
+            <div class="row">
+              <div class="col">
+                <div class="custom-form__field">
+                  <input type="text" name="first-name" id="first-child" required>
+                  <label for="first-name">First Name*</label>
+                </div>
+              </div>
+              <div class="col"> 
+                <div class="custom-form__field">
+                  <input type="text" name="last-name" id="last-name" required>
+                  <label for="last-name">Last Name*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="custom-form__field">
+                  <input type="email" name="email" id="email" required>
+                  <label for="email">Email*</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-form__field">
+                  <input type="number" name="phone" id="phone">
+                  <label for="phone">Phone</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                Which option are you interested in?
+              </div>
+              <div class="col col--space--between"> 
+                <div>
+                  <label class="custom-form__radio">
+                    <input type="radio" name="option" >
+                    <span>Provider Group</span>
+                  </label>
+                </div>
+                <div>
+                  <label class="custom-form__radio">
+                    <input type="radio" name="option" >
+                    <span>Long-Term Care Facility</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                Example of checkboxes
+              </div>
+              <div class="col col--space--between">
+                <div>
+                  <label class="custom-form__check">
+                    <input type="checkbox" name="check" >
+                    <span>Provider Group</span>
+                  </label>
+                </div>
+                <div>
+                  <label class="custom-form__check">
+                    <input type="checkbox" name="check" >
+                    <span>Long-Term Care Facility</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="custom-form__field">
+                  <input type="text" name="group-name" id="group-name">
+                  <label for="group-name">Provider Group Name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-form__field">
+                  <input type="text" name="facility-name" id="facility-name">
+                  <label for="facility-name">Care Facility Name (LTC, SNF, ALF)*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="custom-form__field">
+                  <select name="number-of-patients" id="number-of-patients" required>
+                    <option value="-1"></option>
+                    <option value="1">1-19</option>
+                    <option value="2">20-29</option>
+                    <option value="3">30-39</option>
+                    <option value="4">40-49</option>
+                    <option value="5">50-59</option>
+                  </select>
+                  <label for="number-of-patients">Number of Patients*</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-form__field">
+                  <select name="estimated-ffs-patients" id="estimated-ffs-patients" required>
+                    <option value="-1"></option>
+                    <option value="1">1-19</option>
+                    <option value="2">20-29</option>
+                    <option value="3">30-39</option>
+                    <option value="4">40-49</option>
+                    <option value="5">50-59</option>
+                  </select>
+                  <label for="estimated-ffs-patients">Estimated # FFS Patients</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="custom-form__field">
+                  <textarea name="message" id="message"></textarea>
+                  <label for="message">First Name*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" class="btn btn--secondary">
+            </div>
+          </div>
+
+          <div class="custom-form-success js-success">
+            <p class="text-blue">
+              <span><img class="custom-form-success__icon" src="img/icons/green-check.svg" alt=""></span><strong>Thank you for providing your information.</strong> An ACO Reach professional 
+              will contact you in the next 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn--cta js-modal-btn" data-id="#modal-request"><span>Get Started</span></a>
 
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/slick/slick.min.js"></script>

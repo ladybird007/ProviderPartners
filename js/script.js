@@ -132,5 +132,28 @@
         moreContent.slideDown();
       }
     });
+
+
+    // Hide/show modal
+    $('.js-modal-btn').on('click', function(e) {
+      e.preventDefault();
+      const dataId = $(this).attr('data-id');
+      $(dataId).fadeIn();
+      $('body').css('overflow', 'hidden');
+    });
+
+    $('.js-modal-close').on('click', function() {
+      $(this).closest('.js-modal').fadeOut();
+      $('body').css('overflow', '');
+    });
+
+    // hide menu on click outside
+    $('.js-modal').click(function(e){ 
+      console.log($('.js-modal-body').is(e.target));
+      if ((!$('.js-modal-body').is(e.target)) && ($('.js-modal-body').has(e.target).length === 0)) {
+          $(this).fadeOut();
+          $('body').css('overflow', '');
+        }
+    });
   })
 })(jQuery)
