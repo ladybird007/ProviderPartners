@@ -1397,7 +1397,7 @@ a {
     &:before {
       width: 350px;
       height: 340px;
-      top: 782px;
+      top: 201px;
       left: -203px;
       background: url(../img/public-reporting/bg-left.svg) no-repeat 50% 50%;
     }
@@ -1416,10 +1416,29 @@ a {
   margin-bottom: 100px;
   align-items: flex-start;
   a {
+    position: relative;
     word-break: break-all;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 0;
+      height: 2px;
+      transition: all 0.3s;
+      background-color: $light-blue;
+    }
+    &:hover {
+      &:after {
+        right: 0;
+      }
+    }
   }
   .text-center > *:not(:first-child) {
-    margin-top: 32px;
+    margin-top: 20px;
+  }
+  .text-medium {
+    line-height: 1.2;
   }
   @media (max-width: 991px) {
     .text-center:not(:first-child) {
@@ -1441,6 +1460,9 @@ a {
 .provider {
   max-width: 270px;
   width: 100%;
+  h3 {
+    margin-bottom: 8px;
+  }
   @media (max-width: 1279px) {
     margin-top: 32px;
   }
@@ -1508,11 +1530,19 @@ a {
     display: none;
     padding-top: 24px;
     padding-left: 30px;
-    padding-right: 30px;
+    
   }
   @media (max-width: 1279px) {
+    &__content {
+      padding-right: 32px;
+    }
     h3 br {
       display: none;
+    }
+  }
+  @media (min-width: 1280px) {
+    &__content {
+      padding-right: 64px;
     }
   }
 }
@@ -1532,19 +1562,18 @@ a {
     width: 100%;
     height: 207px;
     margin-bottom: 20px;
-    img {
-      width: 100%;
-      height: 100%;
-      max-width: inherit;
-      object-fit: cover;
+    .video {
+      margin-top: 0;
     }
   }
   .video-btn {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: -29px;
-    margin-left: -29px;
+    transform: translate(-50%, -50%);
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
   }
   @media (max-width: 991px) {
     &__item {
@@ -1782,8 +1811,16 @@ a {
     label {
       position: absolute;
       left: 13px;
-      top: 17px;
+      top: 15px;
       line-height: 1;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+    &.full {
+      label {
+        font-size: 12px;
+        top: -16px;
+      }
     }
   }
   &__radio,
@@ -1865,6 +1902,10 @@ a {
     &:focus {
       border-width: 2px;
       box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+      & ~ label {
+        font-size: 12px;
+        top: -16px;
+      }
     }
   }
   input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
@@ -1880,6 +1921,12 @@ a {
     height: 134px;
     padding-top: 13px;
     resize: none;
+  }
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+  textarea {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
   }
   .col--space--between {
     display: flex;
@@ -1910,9 +1957,9 @@ a {
   }
   @media (min-width: 768px) {
     &__radio,
-  &__check {
-    min-height: 48px;
-  }
+    &__check {
+      min-height: 48px;
+    }
     .row {
       gap: 20px;
     }

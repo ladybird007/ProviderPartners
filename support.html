@@ -76,22 +76,34 @@
         <div class="resources">
           <div class="resources__item">
             <div class="resources__media">
-              <img src="img/support/video.png" alt="">
-              <a href="#" class="video-btn video-btn--small js-modal-btn"></a>
+              <div class="video">
+                <video class="js-video" width="100%" poster="img/home/video.png">
+                  <source src="img/home/PartnerWithUs.mp4" type="video/mp4" />
+                </video>
+                <button id="playButton" class="video-btn video-btn--small js-video-play"></button>
+              </div>
             </div>
             <h3>Lorem ipsum dolor sit amet.</h3>
           </div>
           <div class="resources__item">
             <div class="resources__media">
-              <img src="img/support/video.png" alt="">
-              <a href="#" class="video-btn video-btn--small js-modal-btn"></a>
+              <div class="video">
+                <video class="js-video" width="100%" poster="img/home/video.png">
+                  <source src="img/home/PartnerWithUs.mp4" type="video/mp4" />
+                </video>
+                <button id="playButton" class="video-btn video-btn--small js-video-play"></button>
+              </div>
             </div>
             <h3>Lorem ipsum dolor sit amet.</h3>
           </div>
           <div class="resources__item">
             <div class="resources__media">
-              <img src="img/support/video.png" alt="">
-              <a href="#" class="video-btn video-btn--small js-modal-btn"></a>
+              <div class="video">
+                <video class="js-video" width="100%" poster="img/home/video.png">
+                  <source src="img/home/PartnerWithUs.mp4" type="video/mp4" />
+                </video>
+                <button id="playButton" class="video-btn video-btn--small js-video-play"></button>
+              </div>
             </div>
             <h3>Lorem ipsum dolor sit amet.</h3>
           </div>
@@ -360,27 +372,25 @@
               <div class="col">
                 <div class="custom-form__field">
                   <select name="number-of-patients" id="number-of-patients" required>
-                    <option value="-1"></option>
+                    <option value="-1">Number of Patients*</option>
                     <option value="1">1-19</option>
                     <option value="2">20-29</option>
                     <option value="3">30-39</option>
                     <option value="4">40-49</option>
                     <option value="5">50-59</option>
                   </select>
-                  <label for="number-of-patients">Number of Patients*</label>
                 </div>
               </div>
               <div class="col">
                 <div class="custom-form__field">
                   <select name="estimated-ffs-patients" id="estimated-ffs-patients" required>
-                    <option value="-1"></option>
+                    <option value="-1">Estimated # FFS Patients</option>
                     <option value="1">1-19</option>
                     <option value="2">20-29</option>
                     <option value="3">30-39</option>
                     <option value="4">40-49</option>
                     <option value="5">50-59</option>
                   </select>
-                  <label for="estimated-ffs-patients">Estimated # FFS Patients</label>
                 </div>
               </div>
             </div>
@@ -388,7 +398,7 @@
               <div class="col">
                 <div class="custom-form__field">
                   <textarea name="message" id="message"></textarea>
-                  <label for="message">First Name*</label>
+                  <label for="message">Message</label>
                 </div>
               </div>
             </div>

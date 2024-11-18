@@ -138,9 +138,9 @@
     $('.js-modal-btn').on('click', function(e) {
       e.preventDefault();
       const dataId = $(this).attr('data-id');
-      console.log(dataId);
       $(dataId).fadeIn();
       $('body').css('overflow', 'hidden');
+      isFullValue();
     });
 
     $('.js-modal-close').on('click', function() {
@@ -168,5 +168,17 @@
         video.pause();
       }
     });
+
+    // Label moving
+    function isFullValue() {
+      $('.js-form input').each((index, element) => {
+        console.log($(element).val());
+        if($(element).val().length > 0) {
+          console.log('dddd');
+          $(element).parent().addClass('full');
+        }
+      });
+    }
+    
   })
 })(jQuery)
