@@ -73,8 +73,8 @@
             <a href="#" class="btn btn--secondary">Request a Meeting</a>
           </div>
           <div class="banner__hero">
-            <img class="mobile-invisible" src="img/home/hero.svg" alt="">
-            <img class="mobile-visible" src="img/home/hero-mobile.svg" alt="">
+            <img class="mobile-invisible" src="img/home/hero.png" alt="">
+            <img class="mobile-visible" src="img/home/hero-mobile.png" alt="">
           </div>
         </div>
       </div>
@@ -138,9 +138,9 @@
 
               <div class="stat stat--green">
                 <div class="stat__percent">
-                  52%
+                  52<span class="stat__percent-mark">%</span>
                 </div>
-                <p class="large">
+                <p class="large text-bold">
                   Reduction in 30-Day Readmissions
                 </p>
               </div>
@@ -165,9 +165,9 @@
 
               <div class="stat stat--navy">
                 <div class="stat__percent">
-                  42%
+                  42<span class="stat__percent-mark">%</span>
                 </div>
-                <p class="large">
+                <p class="large text-bold">
                   Decrease in Length of Stay
                 </p>
               </div>
@@ -208,7 +208,7 @@
                 “Provider Partners doesn't just provide services; they become a true 
                 extension of your team, working tirelessly to achieve your goals.”
               </h3>
-              <div>
+              <div class="text-medium">
                 <p class="large">Elizabeth Brock</p>
                 <p>Chief executive officer</p>
               </div>
@@ -220,7 +220,7 @@
                 2 “Provider Partners doesn't just provide services; they become a true 
                 extension of your team.”
               </h3>
-              <div>
+              <div class="text-medium">
                 <p class="large">Elizabeth Brock</p>
                 <p>Chief executive officer</p>
               </div>
@@ -231,7 +231,7 @@
               <h3>
                 3 “Provider Partners doesn't just provide services; they become a true.”
               </h3>
-              <div>
+              <div class="text-medium">
                 <p class="large">Elizabeth Brock</p>
                 <p>Chief executive officer</p>
               </div>
@@ -244,12 +244,14 @@
 
     <div class="video-section section">
       <div class="container container--small">
-        <div class="text-center">
+        <div class="section__headline">
           <h2>Learn how the Reach program can boost your earnings.</h2>
         </div>
         <div class="video">
-          <img src="img/home/video.png" alt="">
-          <a href="#" class="video__btn video-btn js-modal-btn"></a>
+          <video class="js-video" width="100%" poster="img/home/video.png">
+            <source src="img/home/PartnerWithUs.mp4" type="video/mp4" />
+          </video>
+          <button id="playButton" class="video__btn video-btn js-video-play"></button>
         </div>
       </div>
     </div>
@@ -325,7 +327,7 @@
             <p>
               Schedule a Provider Partners Connect Care demo for your practice or facility.
             </p>
-            <a href="#" class="btn btn--primary js-modal-btn">Request a Demo</a>
+            <a href="#" class="btn btn--primary js-modal-btn" data-id="#modal-request">Request a Demo</a>
           </div>
 
           <div class="main-cta__photo">
@@ -355,7 +357,7 @@
       </div>
       <div class="footer__bottom">
         <p class="small">Copyright Provider Partners Connect Care - All Rights Reserved</p>
-        <p class="small">
+        <p>
           <a href="#">Terms & Conditions</a>
         </p>
       </div>
@@ -365,8 +367,8 @@
   <div id="modal-request" class="modal js-modal">
     <div class="modal__over">
       <div class="modal__body js-modal-body">
+        <span class="modal__close js-modal-close"></span>
         <div class="modal__header">
-          <span class="modal__close js-modal-close"></span>
           <h2>Request a Demo</h2>
           <p>
             Get started by filling out the form to request 

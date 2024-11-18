@@ -82,7 +82,7 @@
           </p>
         </div>
 
-        <div class="stacks">
+        <div class="stacks stacks--about">
           <div class="stack-card stack-card--reverse">
             <div class="stack-card__photo">
               <div class="wave-img wave-img--outline-green">
@@ -140,15 +140,15 @@
       <div class="container">
         <div class="row">
           <div class="mobile-invisible photo-text__video-btn">
-            <a href="#" class="video-btn"></a>
+            <a href="#" class="video-btn js-modal-btn" data-id="#modal-video"></a>
           </div>
           <div class="photo-text__text">
             <h2>Learn more about Providers Partners and how we can benefit your practice.</h2>
-            <a href="#" class="btn btn--primary js-modal-btn">Watch Our Video</a>
+            <a href="#" class="btn btn--primary js-modal-btn" data-id="#modal-video">Watch Our Video</a>
           </div>
           <div class="photo-text__photo mobile-visible">
             <img src="img/about/providers-mobile.png" alt="">
-            <a href="#" class="video-btn"></a>
+            <a href="#" class="video-btn js-modal-btn" data-id="#modal-video"></a>
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@
             <p>
               Schedule a Provider Partners Connect Care demo for your practice or facility.
             </p>
-            <a href="#" class="btn btn--primary js-modal-btn">Request a Demo</a>
+            <a href="#" class="btn btn--primary js-modal-btn" data-id="#modal-request">Request a Demo</a>
           </div>
 
           <div class="main-cta__photo">
@@ -240,7 +240,7 @@
       </div>
       <div class="footer__bottom">
         <p class="small">Copyright Provider Partners Connect Care - All Rights Reserved</p>
-        <p class="small">
+        <p>
           <a href="#">Terms & Conditions</a>
         </p>
       </div>
@@ -250,8 +250,8 @@
   <div id="modal-request" class="modal js-modal">
     <div class="modal__over">
       <div class="modal__body js-modal-body">
+        <span class="modal__close js-modal-close"></span>
         <div class="modal__header">
-          <span class="modal__close js-modal-close"></span>
           <h2>Request a Demo</h2>
           <p>
             Get started by filling out the form to request 
@@ -386,6 +386,23 @@
               <span><img class="custom-form-success__icon" src="img/icons/green-check.svg" alt=""></span><strong>Thank you for providing your information.</strong> An ACO Reach professional 
               will contact you in the next 24 hours.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-video" class="modal js-modal">
+    <div class="modal__over">
+      
+      <div class="modal__body js-modal-body">
+        <span class="modal__close js-modal-close"></span>
+        <div class="modal__content modal__content--center">
+          <div class="video">
+            <video class="js-video" width="100%" poster="img/home/video.png">
+              <source src="img/home/PartnerWithUs.mp4" type="video/mp4" />
+            </video>
+            <button id="playButton" class="video__btn video-btn js-video-play"></button>
           </div>
         </div>
       </div>
