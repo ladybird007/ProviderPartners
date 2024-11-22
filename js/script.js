@@ -30,7 +30,8 @@
     // Show/hide menu in header
 
     // show/hide menu on click
-    dropBtn.on('click', function() {
+    dropBtn.hover(function() {
+      console.log('ddd');
       if($(this).hasClass('opened')) {
         $(this).removeClass('opened');
         dropSubMenu.slideUp();
@@ -179,6 +180,16 @@
         }
       });
     }
+
+
+    // remove hasj from url on scroll
+    $(document).ready(function() {
+      if (typeof(window.location.hash) !== 'undefined' && window.location.hash.length > 0) {
+        window.location.hash = "";
+      }
+    });
+
+
     
   })
 })(jQuery)

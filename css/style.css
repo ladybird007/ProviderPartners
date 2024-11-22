@@ -933,10 +933,8 @@ a {
   }
   .banner__bg-img {
     bottom: 10px;
-    left: -10px;
-    right: -10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    left: -15px;
+    right: -15px;
     border-bottom-right-radius: 50% 10px;
     border-bottom-left-radius: 50% 10px;
   }
@@ -2054,6 +2052,12 @@ a {
     padding: 32px;
   }
 }
+@media (max-width: 399px) {
+  .modal__content {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
 @media (min-width: 768px) {
   .modal__content {
     min-height: 605px;
@@ -2202,6 +2206,16 @@ a {
   position: relative;
   z-index: 2;
 }
+.custom-form input::-webkit-outer-spin-button,
+.custom-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.custom-form input[type=number] {
+  -webkit-appearance: textfield;
+          appearance: textfield;
+  -moz-appearance: textfield;
+}
 .custom-form .col--space--between {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2242,6 +2256,18 @@ a {
     gap: 18px;
   }
 }
+@media (max-width: 399px) {
+  .custom-form input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+  .custom-form select,
+  .custom-form textarea {
+    font-size: 16px;
+  }
+  .custom-form__field label {
+    font-size: 16px;
+    top: 16px;
+    left: 10px;
+  }
+}
 @media (min-width: 768px) {
   .custom-form__radio, .custom-form__check {
     min-height: 48px;
@@ -2265,4 +2291,8 @@ a {
   width: 18px;
   height: 18px;
   margin-right: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
