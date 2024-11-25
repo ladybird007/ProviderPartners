@@ -2,14 +2,14 @@
   $(document).ready(function(){
 
 
-    const dropBtn = $('.js-menu-btn'),
+    const dropBtn = $('.js-menu-btn').parent(),
           dropSubMenu = dropBtn.parent().find('.js-menu'),
           dropBtnMobile = $('.js-mobile-nav-btn'),
           dropNav = $('.js-nav');
 
 
     // Add arrow svg to dropdown-btn
-    dropBtn.append(
+    $('.js-menu-btn').append(
       `<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11.2765 0.186768L6.68652 4.51335L2.09652 0.186768L0.686523 1.51875L6.68652 7.18677L12.6865 1.51875L11.2765 0.186768Z" fill="#003D4C"/>
       </svg>`
@@ -29,19 +29,49 @@
 
     // Show/hide menu in header
 
-    // show/hide menu on click
-    dropBtn.hover(function() {
-      console.log('ddd');
-      if($(this).hasClass('opened')) {
-        $(this).removeClass('opened');
-        dropSubMenu.slideUp();
-      } else {
-        $('.js-menu-btn').removeClass('opened');
-        $('.js-menu').slideUp();
-        $(this).addClass('opened');
-        dropSubMenu.slideDown()
-      }
+    var windowWidth = $(window).width();
+
+    showMenu();
+    $(window).resize(function() {
+      windowWidth = $(window).width();
+      showMenu();
     });
+
+    function showMenu() {
+      if (device.desktop()) {
+        if (windowWidth > 991) {
+          showMenuHover();
+        } else {
+          showMenuClick();
+        }
+      }
+      if(!device.desktop()) {
+        showMenuClick();
+      }
+    }
+    function showMenuHover() {
+      dropBtn.hover(function(){
+        $(this).addClass('opened');
+        dropSubMenu.stop( true, true ).slideDown();
+      }, function(){
+        $(this).removeClass('opened');
+        dropSubMenu.stop( true, true ).slideUp();
+      });
+    }
+    function showMenuClick() {
+      dropBtn.on('click', function() {
+        if($(this).hasClass('opened')) {
+          $(this).removeClass('opened');
+          dropSubMenu.stop( true, true ).slideUp();
+        } else {
+          $('.js-menu-btn').removeClass('opened');
+          $('.js-menu').slideUp();
+          $(this).addClass('opened');
+          dropSubMenu.stop( true, true ).slideDown()
+        }
+      });
+    }
+    
 
     // Show/hide menu on mobile
     dropBtnMobile.on('click', function() {
@@ -183,12 +213,10 @@
 
 
     // remove hasj from url on scroll
-    $(document).ready(function() {
-      if (typeof(window.location.hash) !== 'undefined' && window.location.hash.length > 0) {
-        window.location.hash = "";
-      }
-    });
-
+    var currentURL = window.location.href;
+    if (typeof(window.location.hash) !== 'undefined' && window.location.hash.length > 0) {
+      window.history.pushState("", document.title, currentURL.split('#')[0]);
+    }
 
     
   })
